@@ -13,6 +13,16 @@
 		3104463420D69441008FB490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3104463320D69441008FB490 /* Assets.xcassets */; };
 		3104463720D69441008FB490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3104463520D69441008FB490 /* LaunchScreen.storyboard */; };
 		3104464220D69996008FB490 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104464120D69996008FB490 /* HomeTableViewCell.swift */; };
+		31F0737920E3E4B6000EEE2E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737820E3E4B6000EEE2E /* Constants.swift */; };
+		31F0737B20E3EA86000EEE2E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737A20E3EA86000EEE2E /* Router.swift */; };
+		31F0737D20E3EC4D000EEE2E /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737C20E3EC4D000EEE2E /* DataAccess.swift */; };
+		31F0738220E3EE68000EEE2E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0738120E3EE68000EEE2E /* Weather.swift */; };
+		31F0738420E3EF0C000EEE2E /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0738320E3EF0C000EEE2E /* Main.swift */; };
+		31F0738620E3EFAA000EEE2E /* WeatherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0738520E3EFAA000EEE2E /* WeatherDetails.swift */; };
+		31F0738920E3F45E000EEE2E /* BusinessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0738820E3F45E000EEE2E /* BusinessManager.swift */; };
+		31F0738B20E3F61A000EEE2E /* Sys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0738A20E3F61A000EEE2E /* Sys.swift */; };
+		31F0738D20E3FF8D000EEE2E /* ConstantDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0738C20E3FF8D000EEE2E /* ConstantDatas.swift */; };
+		6FB587A1E1191F0FC8F2AD41 /* Pods_Nalssi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618A07853E2657A42B996EDE /* Pods_Nalssi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,18 @@
 		3104463620D69441008FB490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3104463820D69441008FB490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3104464120D69996008FB490 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		31F0737820E3E4B6000EEE2E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		31F0737A20E3EA86000EEE2E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		31F0737C20E3EC4D000EEE2E /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		31F0738120E3EE68000EEE2E /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		31F0738320E3EF0C000EEE2E /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		31F0738520E3EFAA000EEE2E /* WeatherDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetails.swift; sourceTree = "<group>"; };
+		31F0738820E3F45E000EEE2E /* BusinessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessManager.swift; sourceTree = "<group>"; };
+		31F0738A20E3F61A000EEE2E /* Sys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sys.swift; sourceTree = "<group>"; };
+		31F0738C20E3FF8D000EEE2E /* ConstantDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantDatas.swift; sourceTree = "<group>"; };
+		4B40A15E57DAA725E50A50C2 /* Pods-Nalssi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nalssi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nalssi/Pods-Nalssi.debug.xcconfig"; sourceTree = "<group>"; };
+		618A07853E2657A42B996EDE /* Pods_Nalssi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nalssi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51BF607C3D186F860422FA9 /* Pods-Nalssi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nalssi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nalssi/Pods-Nalssi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FB587A1E1191F0FC8F2AD41 /* Pods_Nalssi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +65,8 @@
 			children = (
 				3104462B20D6943F008FB490 /* Nalssi */,
 				3104462A20D6943F008FB490 /* Products */,
+				42EFDE5399ADEA04101A3D13 /* Pods */,
+				BE23695076BDBD0E176305EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +81,9 @@
 		3104462B20D6943F008FB490 /* Nalssi */ = {
 			isa = PBXGroup;
 			children = (
+				31F0738720E3F43D000EEE2E /* Business */,
+				31F0737E20E3EC94000EEE2E /* Models */,
+				31F0737720E3E46C000EEE2E /* DataAccess */,
 				3104463F20D69467008FB490 /* ViewControllers */,
 				3104463E20D69455008FB490 /* Ressources */,
 				3104462C20D6943F008FB490 /* AppDelegate.swift */,
@@ -69,6 +97,7 @@
 			children = (
 				3104464020D69474008FB490 /* Storyboards */,
 				3104463320D69441008FB490 /* Assets.xcassets */,
+				31F0738C20E3FF8D000EEE2E /* ConstantDatas.swift */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -91,6 +120,52 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		31F0737720E3E46C000EEE2E /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				31F0737820E3E4B6000EEE2E /* Constants.swift */,
+				31F0737A20E3EA86000EEE2E /* Router.swift */,
+				31F0737C20E3EC4D000EEE2E /* DataAccess.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		31F0737E20E3EC94000EEE2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31F0738120E3EE68000EEE2E /* Weather.swift */,
+				31F0738320E3EF0C000EEE2E /* Main.swift */,
+				31F0738520E3EFAA000EEE2E /* WeatherDetails.swift */,
+				31F0738A20E3F61A000EEE2E /* Sys.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		31F0738720E3F43D000EEE2E /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				31F0738820E3F45E000EEE2E /* BusinessManager.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		42EFDE5399ADEA04101A3D13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B40A15E57DAA725E50A50C2 /* Pods-Nalssi.debug.xcconfig */,
+				A51BF607C3D186F860422FA9 /* Pods-Nalssi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE23695076BDBD0E176305EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				618A07853E2657A42B996EDE /* Pods_Nalssi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3104463B20D69441008FB490 /* Build configuration list for PBXNativeTarget "Nalssi" */;
 			buildPhases = (
+				3BF4A5F14B4053CEADC11E3C /* [CP] Check Pods Manifest.lock */,
 				3104462520D6943F008FB490 /* Sources */,
 				3104462620D6943F008FB490 /* Frameworks */,
 				3104462720D6943F008FB490 /* Resources */,
+				DE2DE390928F99120CD2D606 /* [CP] Embed Pods Frameworks */,
+				23D60E5F579DBFA06FE479A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,14 +235,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23D60E5F579DBFA06FE479A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nalssi/Pods-Nalssi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BF4A5F14B4053CEADC11E3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nalssi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE2DE390928F99120CD2D606 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Nalssi/Pods-Nalssi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nalssi/Pods-Nalssi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3104462520D6943F008FB490 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F0738220E3EE68000EEE2E /* Weather.swift in Sources */,
 				3104464220D69996008FB490 /* HomeTableViewCell.swift in Sources */,
+				31F0738420E3EF0C000EEE2E /* Main.swift in Sources */,
+				31F0738620E3EFAA000EEE2E /* WeatherDetails.swift in Sources */,
+				31F0737D20E3EC4D000EEE2E /* DataAccess.swift in Sources */,
+				31F0738D20E3FF8D000EEE2E /* ConstantDatas.swift in Sources */,
+				31F0738B20E3F61A000EEE2E /* Sys.swift in Sources */,
+				31F0738920E3F45E000EEE2E /* BusinessManager.swift in Sources */,
 				3104462F20D6943F008FB490 /* ViewController.swift in Sources */,
+				31F0737B20E3EA86000EEE2E /* Router.swift in Sources */,
 				3104462D20D6943F008FB490 /* AppDelegate.swift in Sources */,
+				31F0737920E3E4B6000EEE2E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +451,7 @@
 		};
 		3104463C20D69441008FB490 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B40A15E57DAA725E50A50C2 /* Pods-Nalssi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -325,6 +471,7 @@
 		};
 		3104463D20D69441008FB490 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A51BF607C3D186F860422FA9 /* Pods-Nalssi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -15,6 +15,9 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var weatherLabel: UILabel!
     
+    @IBOutlet weak var topLineView: UIView!
+    @IBOutlet weak var bottomLineView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

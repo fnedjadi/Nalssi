@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dac-t4-4sS">
-                                <rect key="frame" x="10" y="452.5" width="355" height="204.5"/>
+                                <rect key="frame" x="10" y="452.5" width="355" height="194.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" id="SAJ-VE-sMd" customClass="HomeTableViewCell" customModule="Nalssi" customModuleProvider="target">
@@ -71,13 +71,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="wGf-jB-073">
-                                                    <rect key="frame" x="162.5" y="6.5" width="31" height="31"/>
+                                                    <rect key="frame" x="165" y="9" width="26" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="wGf-jB-073" secondAttribute="height" multiplier="1:1" id="Iak-BP-KFU"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-sB-lMq">
-                                                    <rect key="frame" x="122" y="11" width="24.5" height="21"/>
+                                                    <rect key="frame" x="124.5" y="11" width="24.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                                 <constraint firstItem="Saw-k5-PDN" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" id="PDy-g4-YBh"/>
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="width" secondItem="Saw-k5-PDN" secondAttribute="width" id="Taz-5b-9Zj"/>
                                                 <constraint firstItem="wGf-jB-073" firstAttribute="leading" secondItem="0Xw-sB-lMq" secondAttribute="trailing" constant="16" id="b8e-8M-RGe"/>
-                                                <constraint firstItem="wGf-jB-073" firstAttribute="height" secondItem="JeI-dF-hUQ" secondAttribute="height" multiplier="0.7" id="gx3-y6-C2R"/>
+                                                <constraint firstItem="wGf-jB-073" firstAttribute="height" secondItem="JeI-dF-hUQ" secondAttribute="height" multiplier="0.6" id="gx3-y6-C2R"/>
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" id="hQk-hP-0PL"/>
                                                 <constraint firstItem="zKD-BO-v91" firstAttribute="leading" secondItem="JeI-dF-hUQ" secondAttribute="leadingMargin" constant="16" id="i4O-Bi-82W"/>
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="top" secondItem="JeI-dF-hUQ" secondAttribute="top" id="jxj-l4-AxC"/>
@@ -117,7 +117,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="bottomLineView" destination="Saw-k5-PDN" id="D4V-LB-2ED"/>
                                             <outlet property="dayLabel" destination="zKD-BO-v91" id="7eb-IZ-Igz"/>
+                                            <outlet property="topLineView" destination="1k9-VK-DVc" id="OJn-wv-loo"/>
                                             <outlet property="weatherIcon" destination="wGf-jB-073" id="JTV-40-2rk"/>
                                             <outlet property="weatherLabel" destination="0Xw-sB-lMq" id="vBj-2j-XRA"/>
                                         </connections>
@@ -145,7 +147,7 @@
                             <constraint firstItem="z44-kn-jCw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSf-wn-ibd"/>
                             <constraint firstItem="z44-kn-jCw" firstAttribute="top" secondItem="Eny-np-2UX" secondAttribute="bottom" constant="39" id="qpl-3T-1X4"/>
                             <constraint firstItem="Dac-t4-4sS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="spm-BL-cd0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dac-t4-4sS" secondAttribute="bottom" constant="10" id="why-3s-dDb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dac-t4-4sS" secondAttribute="bottom" constant="20" id="why-3s-dDb"/>
                             <constraint firstItem="azT-hq-Ync" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="y9L-6p-CDm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
