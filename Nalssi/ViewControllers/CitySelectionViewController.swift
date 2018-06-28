@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol CitySelectionDelegate: class {
+    
+    func didSelectCity(_ city: City)
+}
+
 class CitySelectionViewController: UIViewController {
     
     var cities: [City]?
+    public weak var delegate: CitySelectionDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,10 @@ extension CitySelectionViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("City selected: \(self.cities![indexPath.row].name), \(self.cities![indexPath.row].country)")
+        let cityIndex: Int = indexPath.row
+        if let delegate = delegate, let cities = self.cities, cityIndex < cities.count {
+            delegate.didSelectCity(cities[cityIndex])
+        }
+        self.navigationController?.popViewController(animated: true)
     }
 }

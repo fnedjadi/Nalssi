@@ -41,7 +41,7 @@
                                     <color key="titleColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rKk-0f-1Ug" kind="show" id="vUG-x5-0mP"/>
+                                    <segue destination="rKk-0f-1Ug" kind="show" identifier="showCities" id="vUG-x5-0mP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris, FR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-np-2UX">
