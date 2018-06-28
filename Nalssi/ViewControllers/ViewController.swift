@@ -17,10 +17,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var dailyWeather : [List] = []
+    let id = 6455259
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
-        BusinessManager.getWeather(id: 6455259) { (res, err) in
+        BusinessManager.getWeather(id: self.id) { (res, err) in
             if let error = err {
                 let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -33,11 +38,28 @@ class ViewController: UIViewController {
                 self.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "")
             }
         }
+        
+        BusinessManager.getDailyWeather(id: self.id) { (res, err) in
+            if let error = err {
+                let alert = UIAlertController(title: "Error for daily", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            if let weather = res {
+                self.dailyWeather = weather.list ?? []
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func generateDates(date: Date, added: Int) -> Date {
+        let dates = Calendar.current.date(byAdding: .day, value: added, to: date)!
+        return dates
     }
 }
 
@@ -58,9 +80,31 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.topLineView.isHidden = true
         }
         
-        cell.dayLabel.text = "Dim."
-        cell.weatherLabel.text = "20°"
-        cell.weatherIcon.image = #imageLiteral(resourceName: "sun")
+        if !self.dailyWeather.isEmpty {
+            var weather = self.dailyWeather[indexPath.row]
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            
+            for tmp in self.dailyWeather {
+                let date = dateFormatter.date(from: tmp.date!) ?? Date()
+                let calendar = Calendar.current
+                let day = calendar.component(.day, from: date)
+                let day2 = calendar.component(.day, from: self.generateDates(date: Date(), added: indexPath.row))
+                if (day == day2) {
+                    weather = tmp
+                    break
+                }
+            }
+            
+            if let dateStr = weather.date { //2018-06-28 18:00:00
+                let date = dateFormatter.date(from: dateStr) ?? Date()
+                cell.dayLabel.text = ConstantDatas.weekdayText(day: Calendar.current.dateComponents([.weekday], from: date).weekday ?? 0)
+            }
+            
+            cell.weatherLabel.text = "\(weather.main?.temp ?? 0)°"
+            cell.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "")
+        }
         
         return cell
     }

@@ -17,6 +17,7 @@ protocol RouterProtocol {
 
 enum Router {
     case getWeather()
+    case getDaily()
 }
 
 extension Router : RouterProtocol {
@@ -25,6 +26,8 @@ extension Router : RouterProtocol {
         switch self {
         case .getWeather:
             return .get
+        case .getDaily:
+            return .get
         }
     }
     
@@ -32,6 +35,8 @@ extension Router : RouterProtocol {
         switch self {
         case .getWeather:
             return Constants.Url.ENTRY_API_URL + Constants.Url.WEATHER
+        case .getDaily:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.DAILY
         }
     }
     

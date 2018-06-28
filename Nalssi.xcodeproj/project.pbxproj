@@ -13,6 +13,9 @@
 		3104463420D69441008FB490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3104463320D69441008FB490 /* Assets.xcassets */; };
 		3104463720D69441008FB490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3104463520D69441008FB490 /* LaunchScreen.storyboard */; };
 		3104464220D69996008FB490 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104464120D69996008FB490 /* HomeTableViewCell.swift */; };
+		3153FB8B20E52C470084538A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153FB8A20E52C470084538A /* City.swift */; };
+		3153FB8D20E52C920084538A /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153FB8C20E52C920084538A /* Daily.swift */; };
+		3153FB8F20E52D5F0084538A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153FB8E20E52D5F0084538A /* List.swift */; };
 		31F0737920E3E4B6000EEE2E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737820E3E4B6000EEE2E /* Constants.swift */; };
 		31F0737B20E3EA86000EEE2E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737A20E3EA86000EEE2E /* Router.swift */; };
 		31F0737D20E3EC4D000EEE2E /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737C20E3EC4D000EEE2E /* DataAccess.swift */; };
@@ -34,6 +37,9 @@
 		3104463620D69441008FB490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3104463820D69441008FB490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3104464120D69996008FB490 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		3153FB8A20E52C470084538A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		3153FB8C20E52C920084538A /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
+		3153FB8E20E52D5F0084538A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		31F0737820E3E4B6000EEE2E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		31F0737A20E3EA86000EEE2E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		31F0737C20E3EC4D000EEE2E /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
@@ -137,6 +143,9 @@
 				31F0738320E3EF0C000EEE2E /* Main.swift */,
 				31F0738520E3EFAA000EEE2E /* WeatherDetails.swift */,
 				31F0738A20E3F61A000EEE2E /* Sys.swift */,
+				3153FB8A20E52C470084538A /* City.swift */,
+				3153FB8C20E52C920084538A /* Daily.swift */,
+				3153FB8E20E52D5F0084538A /* List.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,10 +315,13 @@
 				31F0738D20E3FF8D000EEE2E /* ConstantDatas.swift in Sources */,
 				31F0738B20E3F61A000EEE2E /* Sys.swift in Sources */,
 				31F0738920E3F45E000EEE2E /* BusinessManager.swift in Sources */,
+				3153FB8F20E52D5F0084538A /* List.swift in Sources */,
 				3104462F20D6943F008FB490 /* ViewController.swift in Sources */,
 				31F0737B20E3EA86000EEE2E /* Router.swift in Sources */,
 				3104462D20D6943F008FB490 /* AppDelegate.swift in Sources */,
+				3153FB8B20E52C470084538A /* City.swift in Sources */,
 				31F0737920E3E4B6000EEE2E /* Constants.swift in Sources */,
+				3153FB8D20E52C920084538A /* Daily.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

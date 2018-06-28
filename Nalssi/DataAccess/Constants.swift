@@ -14,6 +14,7 @@ struct Constants {
     struct Url {
         static let ENTRY_API_URL = "http://api.openweathermap.org/data/2.5/"
         static let WEATHER = "weather"
+        static let DAILY = "/forecast"
     }
     
     struct Headers {

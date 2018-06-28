@@ -15,4 +15,10 @@ class BusinessManager {
             completed(res, error)
         }
     }
+    
+    static func getDailyWeather(id: Int, completed: @escaping ((_ response:Daily?, _ error:Error?) -> Void)) {
+        DataAccess.getDailyWeather(id: id) { (res, error) in
+            completed(res, error)
+        }
+    }
 }

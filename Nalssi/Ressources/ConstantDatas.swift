@@ -28,4 +28,23 @@ public struct ConstantDatas {
             return #imageLiteral(resourceName: "cloudy")
         }
     }
+    
+    static func weekdayText(day: Int) -> String {
+        switch day {
+        case 1:
+            return "Dim."
+        case 2:
+            return "Lun."
+        case 3:
+            return "Mar."
+        case 4:
+            return "Mer."
+        case 5:
+            return "Jeu."
+        case 6:
+            return "Ven."
+        default:
+            return "Sam."
+        }
+    }
 }

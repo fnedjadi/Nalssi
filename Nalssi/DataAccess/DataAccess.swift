@@ -23,4 +23,16 @@ class DataAccess {
                 completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
+    
+    static func getDailyWeather(id: Int, completed: @escaping ((_ response:Daily?, _ error:Error?) -> Void)) {
+        let params = ["id": "\(id)",
+            "units": "metric",
+            "appid": Constants.Headers.Api_Key]
+        
+        Alamofire.request(Router.getDaily().path, method: Router.getDaily().method, parameters: params, encoding: URLEncoding.queryString, headers: [:])
+            .validate()
+            .responseObject { (alamoResponse: DataResponse<Daily>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
 }
