@@ -2,25 +2,23 @@
 //  City.swift
 //  Nalssi
 //
-//  Created by Farah Nedjadi on 28/06/2018.
+//  Created by Corentin Redon on 6/28/18.
 //  Copyright © 2018 mti. All rights reserved.
 //
 
 import Foundation
-import ObjectMapper
 
-public class City: Mappable {
+public class City: Decodable {
     
-    var id: Int?
-    var name: String?
-    var country: String?
+    var id: Int
+    var name: String
+    var country: String
+    var coord: Coord
     
-    required public init?(map: Map) {
-    }
-    
-    public func mapping(map: Map) {
-        self.id <- map["id"]
-        self.name <- map["name"]
-        self.country <- map["country"]
+    public init(id: Int, name: String, country: String, coord: Coord) {
+        self.id = id
+        self.name = name
+        self.country = country
+        self.coord = coord
     }
 }

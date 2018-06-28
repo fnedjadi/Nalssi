@@ -12,7 +12,7 @@ import ObjectMapper
 public class Daily: Mappable {
     
     var id: Int?
-    var city: City?
+    var city: CityWeather?
     var cnt: Int?
     var list: [List]?
     

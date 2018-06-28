@@ -18,28 +18,41 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var dailyWeather : [List] = []
-    let id = 6455259
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        BusinessManager.getWeather(id: self.id) { (res, err) in
+        setCityDisplayed(City(id: 6455259, name: "Paris", country: "FR", coord: Coord(lon: 0, lat: 0)))
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    func setCityDisplayed(_ city: City) {
+        BusinessManager.getWeather(id: city.id) { (res, err) in
             if let error = err {
                 let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                return
             }
-            if let weather = res {
+            else if let weather = res {
                 self.weatherLabel.text = "\(weather.main?.temp ?? 0)°"
                 self.cityLabel.text = "\(weather.name ?? "N/A"), \(weather.sys?.country ?? "N/A")"
                 self.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "")
             }
         }
         
-        BusinessManager.getDailyWeather(id: self.id) { (res, err) in
+        BusinessManager.getDailyWeather(id: city.id) { (res, err) in
             if let error = err {
                 let alert = UIAlertController(title: "Error for daily", message: "\(error.localizedDescription)", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -52,15 +65,19 @@ class ViewController: UIViewController {
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func generateDates(date: Date, added: Int) -> Date {
         let dates = Calendar.current.date(byAdding: .day, value: added, to: date)!
         return dates
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCities" {
+            let citySelectionVC = segue.destination as! CitySelectionViewController
+            citySelectionVC.delegate = self
+        }
+    }
+
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -111,6 +128,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height / 3
+    }
+}
+
+extension ViewController: CitySelectionDelegate {
+    
+    func didSelectCity(_ city: City) {
+        setCityDisplayed(city)
     }
 }
 
