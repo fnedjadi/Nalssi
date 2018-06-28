@@ -15,4 +15,8 @@ class BusinessManager {
             completed(res, error)
         }
     }
+    
+    static func getCities() -> [City]? {
+        return CityDataAccess.loadData()
+    }
 }
