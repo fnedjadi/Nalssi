@@ -26,6 +26,8 @@
 		55F17C3C20E4D55B00F42C49 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F17C3B20E4D55B00F42C49 /* City.swift */; };
 		55F17C3E20E4D5EB00F42C49 /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F17C3D20E4D5EB00F42C49 /* Coord.swift */; };
 		55F17C4020E4D67000F42C49 /* CityDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F17C3F20E4D67000F42C49 /* CityDataAccess.swift */; };
+		55F17C4220E4E37600F42C49 /* CitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F17C4120E4E37600F42C49 /* CitySelectionViewController.swift */; };
+		55F17C4620E4E59800F42C49 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F17C4520E4E59800F42C49 /* CityTableViewCell.swift */; };
 		6FB587A1E1191F0FC8F2AD41 /* Pods_Nalssi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618A07853E2657A42B996EDE /* Pods_Nalssi.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		55F17C3B20E4D55B00F42C49 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		55F17C3D20E4D5EB00F42C49 /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
 		55F17C3F20E4D67000F42C49 /* CityDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataAccess.swift; sourceTree = "<group>"; };
+		55F17C4120E4E37600F42C49 /* CitySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionViewController.swift; sourceTree = "<group>"; };
+		55F17C4520E4E59800F42C49 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		618A07853E2657A42B996EDE /* Pods_Nalssi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nalssi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51BF607C3D186F860422FA9 /* Pods-Nalssi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nalssi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nalssi/Pods-Nalssi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,8 @@
 			children = (
 				3104462E20D6943F008FB490 /* ViewController.swift */,
 				3104464120D69996008FB490 /* HomeTableViewCell.swift */,
+				55F17C4120E4E37600F42C49 /* CitySelectionViewController.swift */,
+				55F17C4520E4E59800F42C49 /* CityTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F17C4620E4E59800F42C49 /* CityTableViewCell.swift in Sources */,
 				31F0738220E3EE68000EEE2E /* Weather.swift in Sources */,
 				55F17C4020E4D67000F42C49 /* CityDataAccess.swift in Sources */,
 				3104464220D69996008FB490 /* HomeTableViewCell.swift in Sources */,
@@ -325,6 +332,7 @@
 				31F0737B20E3EA86000EEE2E /* Router.swift in Sources */,
 				3104462D20D6943F008FB490 /* AppDelegate.swift in Sources */,
 				55F17C3C20E4D55B00F42C49 /* City.swift in Sources */,
+				55F17C4220E4E37600F42C49 /* CitySelectionViewController.swift in Sources */,
 				31F0737920E3E4B6000EEE2E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
