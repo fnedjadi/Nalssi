@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 
 public struct ConstantDatas {
-    static func weatherIcon(main: String) -> UIImage {
+    static func weatherIcon(main: String, description: String) -> UIImage {
         switch main {
         case "Clear":
             return #imageLiteral(resourceName: "sun")
         case "Clouds":
+            if (description == "few clouds" || description == "scattered clouds") {
+                return #imageLiteral(resourceName: "cloudy")
+            }
             return #imageLiteral(resourceName: "cloud")
         case "Rain", "Drizzle":
             return #imageLiteral(resourceName: "rain")

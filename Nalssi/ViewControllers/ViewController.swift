@@ -66,7 +66,7 @@ class ViewController: UIViewController {
             else if let weather = res {
                 self.weatherLabel.text = "\(weather.main?.temp ?? 0)°"
                 self.cityLabel.text = "\(weather.name ?? "N/A"), \(weather.sys?.country ?? "N/A")"
-                self.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "")
+                self.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "", description: weather.weather?.first?.description ?? "")
             }
         }
         
@@ -153,7 +153,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             cell.weatherLabel.text = "\(weather.main?.temp ?? 0)°"
-            cell.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "")
+            cell.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "", description: weather.weather?.first?.description ?? "")
         }
         
         return cell
