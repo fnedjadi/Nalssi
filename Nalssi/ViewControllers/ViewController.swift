@@ -57,6 +57,9 @@ class ViewController: UIViewController {
     }
     
     func setCityDisplayed(_ city: City) {
+        self.cityLabel.text = "\(city.name), \(city.country)"
+        self.weatherLabel.text = "NA°"
+        self.weatherIcon.image = ConstantDatas.weatherIcon(main: "", description: "")
         BusinessManager.getWeather(id: city.id) { (res, err) in
             if let error = err {
                 let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
@@ -65,7 +68,6 @@ class ViewController: UIViewController {
             }
             else if let weather = res {
                 self.weatherLabel.text = "\(weather.main?.temp ?? 0)°"
-                self.cityLabel.text = "\(weather.name ?? "N/A"), \(weather.sys?.country ?? "N/A")"
                 self.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "", description: weather.weather?.first?.description ?? "")
             }
         }
