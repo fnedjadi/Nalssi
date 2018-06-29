@@ -190,9 +190,18 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HJy-po-ziF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search for a city" id="HrM-kq-WlF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="rKk-0f-1Ug" id="Jb0-IR-SyL"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" id="VUG-gx-Aaq" customClass="CityTableViewCell" customModule="Nalssi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VUG-gx-Aaq" id="nxO-dL-k3D">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -216,7 +225,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="emptyTableViewCell" rowHeight="220" id="tqG-Hs-NJA" customClass="CityTableViewCell" customModule="Nalssi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="220"/>
+                                        <rect key="frame" x="0.0" y="116" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tqG-Hs-NJA" id="VIA-2v-Gsa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
@@ -257,6 +266,7 @@
                     </view>
                     <connections>
                         <outlet property="cityTableView" destination="HJy-po-ziF" id="PeN-rd-Bhg"/>
+                        <outlet property="searchBar" destination="HrM-kq-WlF" id="KnS-XU-8BH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ig-dJ-BcO" userLabel="First Responder" sceneMemberID="firstResponder"/>

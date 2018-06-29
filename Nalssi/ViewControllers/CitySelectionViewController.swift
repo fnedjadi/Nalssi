@@ -16,10 +16,13 @@ protocol CitySelectionDelegate: class {
 class CitySelectionViewController: UIViewController {
     
     @IBOutlet weak var cityTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var cities: [City]?
     let sectionName: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
     var sections: [[City]] = Array<[City]>(repeating: [], count: 27)
+    var backup: [[City]] = Array<[City]>(repeating: [], count: 27)
+    var previousFilter: String = ""
     var selectionMode: String?
     public weak var delegate: CitySelectionDelegate?
 
@@ -38,17 +41,20 @@ class CitySelectionViewController: UIViewController {
     func setupUI() {
         if cities == nil {
             cityTableView.separatorStyle = .none
+            searchBar.removeFromSuperview()
         }
     }
     
-    func getSectionCities() {
+    func getSectionCities(with filter: String = "") {
         guard let cities = self.cities else { return }
         for city in cities {
-            var indexOfSection: Int = sections.count - 1
-            if let sectionLetter = city.name.uppercased().first {
-                indexOfSection = sectionLetter - Character("A")
+            if city.name.hasPrefix(filter) {
+                var indexOfSection: Int = sections.count - 1
+                if let sectionLetter = city.name.uppercased().first {
+                    indexOfSection = sectionLetter - Character("A")
+                }
+                sections[indexOfSection < 0 ? 0 : indexOfSection].append(city)
             }
-            sections[indexOfSection < 0 ? 0 : indexOfSection].append(city)
         }
     }
 }
@@ -96,5 +102,44 @@ extension CitySelectionViewController: UITableViewDelegate, UITableViewDataSourc
             delegate.didSelectCity(sections[indexPath.section][indexPath.row], selectionMode: selectionMode)
         }
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension CitySelectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        filter(on: searchBar.text ?? "")
+    }
+    
+    func filter(on text: String) {
+        if previousFilter.count < text.count && text.hasPrefix(previousFilter) {
+            filterByIncreasingText(text)
+        }
+        else {
+            filterByReducingText(text)
+        }
+        previousFilter = text
+        self.cityTableView.reloadData()
+    }
+    
+    func filterByReducingText(_ filter: String) {
+        sections = Array<[City]>(repeating: [], count: 27)
+        getSectionCities(with: filter)
+    }
+    
+    func filterByIncreasingText(_ filter: String) {
+        for (index, section) in sections.enumerated() {
+            var newRow: [City] = []
+            for row in section {
+                if row.name.hasPrefix(filter) {
+                    newRow.append(row)
+                }
+            }
+            sections[index] = newRow
+        }
     }
 }
