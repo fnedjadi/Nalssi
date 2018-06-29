@@ -46,6 +46,9 @@
                                 <state key="normal" title="Lieux">
                                     <color key="titleColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="rKk-0f-1Ug" kind="show" identifier="showFavCities" id="0tg-fx-O1n"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris, FR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-np-2UX">
                                 <rect key="frame" x="15" y="156" width="345" height="57.5"/>
@@ -212,6 +215,30 @@
                                             <outlet property="cityName" destination="51g-74-wvh" id="ppU-Ef-CsY"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="emptyTableViewCell" rowHeight="220" id="tqG-Hs-NJA" customClass="CityTableViewCell" customModule="Nalssi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tqG-Hs-NJA" id="VIA-2v-Gsa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucune donnée" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-ln-23b">
+                                                    <rect key="frame" x="30" y="94.5" width="315" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2Ow-ln-23b" secondAttribute="trailing" constant="15" id="fqY-Au-s17"/>
+                                                <constraint firstItem="2Ow-ln-23b" firstAttribute="centerY" secondItem="VIA-2v-Gsa" secondAttribute="centerY" id="mS9-yN-4OC"/>
+                                                <constraint firstItem="2Ow-ln-23b" firstAttribute="leading" secondItem="VIA-2v-Gsa" secondAttribute="leadingMargin" constant="15" id="qdZ-JT-JFs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityName" destination="2Ow-ln-23b" id="c2Q-y9-M1S"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="rKk-0f-1Ug" id="jTw-yc-8RW"/>
@@ -228,6 +255,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YeZ-F6-wbU"/>
                     </view>
+                    <connections>
+                        <outlet property="cityTableView" destination="HJy-po-ziF" id="PeN-rd-Bhg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ig-dJ-BcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,4 +284,7 @@
         <image name="cloud" width="200" height="200"/>
         <image name="cloudy" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0tg-fx-O1n"/>
+    </inferredMetricsTieBreakers>
 </document>

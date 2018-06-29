@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     var dailyWeather : [List] = []
     var cities: [City]?
+    var favCities: [City]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,19 +84,33 @@ class ViewController: UIViewController {
         }
     }
     
+    func addFavorite(_ city: City) {
+        if let favorite = self.favCities {
+            for fav in favorite {
+                if fav.id == city.id {
+                    return
+                }
+            }
+            self.favCities?.append(city)
+        }
+        else {
+            self.favCities = [city]
+        }
+    }
+    
     func generateDates(date: Date, added: Int) -> Date {
         let dates = Calendar.current.date(byAdding: .day, value: added, to: date)!
         return dates
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showCities" {
+        if segue.identifier == "showCities" || segue.identifier == "showFavCities" {
             let citySelectionVC = segue.destination as! CitySelectionViewController
-            citySelectionVC.cities = self.cities
+            citySelectionVC.cities = segue.identifier == "showCities" ? self.cities : self.favCities
+            citySelectionVC.selectionMode = segue.identifier
             citySelectionVC.delegate = self
         }
     }
-
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -151,7 +166,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: CitySelectionDelegate {
     
-    func didSelectCity(_ city: City) {
+    func didSelectCity(_ city: City, selectionMode: String?) {
+        if let selectionMode = selectionMode, selectionMode == "showCities" {
+            addFavorite(city)
+        }
         setCityDisplayed(city)
     }
 }
