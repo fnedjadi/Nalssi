@@ -21,7 +21,6 @@ class CitySelectionViewController: UIViewController {
     var cities: [City]?
     let sectionName: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
     var sections: [[City]] = Array<[City]>(repeating: [], count: 27)
-    var backup: [[City]] = Array<[City]>(repeating: [], count: 27)
     var previousFilter: String = ""
     var selectionMode: String?
     public weak var delegate: CitySelectionDelegate?
@@ -30,7 +29,7 @@ class CitySelectionViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        getSectionCities()
+        self.sections = getSectionCities()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,17 +44,19 @@ class CitySelectionViewController: UIViewController {
         }
     }
     
-    func getSectionCities(with filter: String = "") {
-        guard let cities = self.cities else { return }
+    func getSectionCities(with filter: String = "") -> [[City]] {
+        var newSections: [[City]] = Array<[City]>(repeating: [], count: 27)
+        guard let cities = self.cities else { return newSections }
         for city in cities {
-            if city.name.hasPrefix(filter) {
-                var indexOfSection: Int = sections.count - 1
+            if city.name.lowercased().hasPrefix(filter) {
+                var indexOfSection: Int = newSections.count - 1
                 if let sectionLetter = city.name.uppercased().first {
                     indexOfSection = sectionLetter - Character("A")
                 }
-                sections[indexOfSection < 0 ? 0 : indexOfSection].append(city)
+                newSections[indexOfSection < 0 ? 0 : indexOfSection].append(city)
             }
         }
+        return newSections
     }
 }
 
@@ -111,35 +112,46 @@ extension CitySelectionViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        filter(on: searchBar.text ?? "")
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filter(on: "")
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filter(on: searchBar.text?.lowercased() ?? "")
     }
     
     func filter(on text: String) {
-        if previousFilter.count < text.count && text.hasPrefix(previousFilter) {
-            filterByIncreasingText(text)
+        DispatchQueue.global(qos: .userInitiated).async {
+            var newSections: [[City]] = []
+            if self.previousFilter.count < text.count && text.hasPrefix(self.previousFilter) {
+                newSections = self.filterByIncreasingText(text)
+            }
+            else {
+                newSections = self.filterByReducingText(text)
+            }
+            DispatchQueue.main.async {
+                self.sections = newSections
+                self.previousFilter = text
+                self.cityTableView.reloadData()
+            }
         }
-        else {
-            filterByReducingText(text)
-        }
-        previousFilter = text
-        self.cityTableView.reloadData()
     }
     
-    func filterByReducingText(_ filter: String) {
-        sections = Array<[City]>(repeating: [], count: 27)
-        getSectionCities(with: filter)
+    func filterByReducingText(_ filter: String) -> [[City]] {
+        return getSectionCities(with: filter)
     }
     
-    func filterByIncreasingText(_ filter: String) {
-        for (index, section) in sections.enumerated() {
+    func filterByIncreasingText(_ filter: String) -> [[City]] {
+        var newSections: [[City]] = []
+        for section in sections {
             var newRow: [City] = []
             for row in section {
-                if row.name.hasPrefix(filter) {
+                if row.name.lowercased().hasPrefix(filter) {
                     newRow.append(row)
                 }
             }
-            sections[index] = newRow
+            newSections.append(newRow)
         }
+        return newSections
     }
 }
