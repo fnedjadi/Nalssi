@@ -20,8 +20,6 @@ class CitySelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.cities = BusinessManager.getCities()
     }
 
     override func didReceiveMemoryWarning() {

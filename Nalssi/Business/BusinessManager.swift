@@ -22,7 +22,7 @@ class BusinessManager {
         }
     }
     
-    static func getCities() -> [City]? {
-        return CityDataAccess.loadData()
+    static func getCitiesAsync(completed: @escaping (_ cities: [City]?) -> Void) {
+        CityDataAccess.loadDataAsync(completed: completed)
     }
 }

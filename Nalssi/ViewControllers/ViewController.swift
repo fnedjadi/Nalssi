@@ -11,19 +11,20 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var cityLabel: UILabel!
-    
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var weatherLabel: UILabel!
-    
+    @IBOutlet weak var addCityButton: UIButton!
+    @IBOutlet weak var cityLoaded: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     var dailyWeather : [List] = []
+    var cities: [City]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
         setCityDisplayed(City(id: 6455259, name: "Paris", country: "FR", coord: Coord(lon: 0, lat: 0)))
+        loadCities()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +37,17 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    func loadCities() {
+        BusinessManager.getCitiesAsync() {
+            (cities) in
+            self.cities = cities
+            DispatchQueue.main.async {
+                self.addCityButton.isHidden = false
+                self.cityLoaded.stopAnimating()
+            }
+        }
     }
     
     func setCityDisplayed(_ city: City) {
@@ -74,6 +86,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCities" {
             let citySelectionVC = segue.destination as! CitySelectionViewController
+            citySelectionVC.cities = self.cities
             citySelectionVC.delegate = self
         }
     }
