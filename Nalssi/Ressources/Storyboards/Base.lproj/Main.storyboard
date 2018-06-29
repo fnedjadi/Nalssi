@@ -47,8 +47,8 @@
                                     <color key="titleColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris, FR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-np-2UX">
-                                <rect key="frame" x="100.5" y="156" width="174" height="57.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris, FR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-np-2UX">
+                                <rect key="frame" x="15" y="156" width="345" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -141,7 +141,9 @@
                         <constraints>
                             <constraint firstItem="eml-D6-4XH" firstAttribute="centerY" secondItem="azT-hq-Ync" secondAttribute="centerY" id="497-Zc-SCx"/>
                             <constraint firstItem="eml-D6-4XH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="7Ps-52-vbS"/>
+                            <constraint firstItem="Eny-np-2UX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="7qP-RE-rXB"/>
                             <constraint firstItem="Dac-t4-4sS" firstAttribute="top" secondItem="CAD-p5-bS9" secondAttribute="bottom" constant="40" id="Ed5-EK-wWx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eny-np-2UX" secondAttribute="trailing" constant="15" id="FXS-rf-AIs"/>
                             <constraint firstItem="Eny-np-2UX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PHu-2p-79g"/>
                             <constraint firstItem="Z6F-gG-36G" firstAttribute="centerY" secondItem="azT-hq-Ync" secondAttribute="centerY" id="SHE-D3-2tj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="azT-hq-Ync" secondAttribute="trailing" constant="16" id="XLQ-ao-fui"/>
