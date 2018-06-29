@@ -23,6 +23,17 @@ class BusinessManager {
     }
     
     static func getCitiesAsync(completed: @escaping (_ cities: [City]?) -> Void) {
-        CityDataAccess.loadDataAsync(completed: completed)
+        CityDataAccess.loadDataAsync() {
+            (cities) in
+            if var cities = cities {
+                cities.sort { (city1, city2) in (city1.name < city2.name && city1.name >= "A")
+                                             || (city1.name == city2.name && city1.country < city2.country)
+                                             || (city1.name == city2.name && city1.country == city2.country && city1.id < city2.id)}
+                completed(cities)
+            }
+            else {
+                completed(cities)
+            }
+        }
     }
 }
