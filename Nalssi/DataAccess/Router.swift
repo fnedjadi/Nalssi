@@ -18,6 +18,8 @@ protocol RouterProtocol {
 enum Router {
     case getWeather()
     case getDaily()
+    case getUvi()
+    case getUviDaily()
 }
 
 extension Router : RouterProtocol {
@@ -28,6 +30,10 @@ extension Router : RouterProtocol {
             return .get
         case .getDaily:
             return .get
+        case .getUvi:
+            return .get
+        case .getUviDaily:
+            return .get
         }
     }
     
@@ -37,6 +43,10 @@ extension Router : RouterProtocol {
             return Constants.Url.ENTRY_API_URL + Constants.Url.WEATHER
         case .getDaily:
             return Constants.Url.ENTRY_API_URL + Constants.Url.DAILY
+        case .getUvi:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.UVI
+        case .getUviDaily:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.DAILYUVI
         }
     }
     

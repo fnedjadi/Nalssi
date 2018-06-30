@@ -15,6 +15,7 @@ public class List: Mappable {
     var weather: [WeatherDetails]?
     var main: Main?
     var date: String?
+    var dt: Int?
     
     required public init?(map: Map) {
     }
@@ -24,5 +25,6 @@ public class List: Mappable {
         self.weather <- map["weather"]
         self.main <- map["main"]
         self.date <- map["dt_txt"]
+        self.dt <- map["dt"]
     }
 }

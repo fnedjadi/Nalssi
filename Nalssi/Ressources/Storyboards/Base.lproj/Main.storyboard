@@ -105,22 +105,32 @@
                                                         <constraint firstAttribute="height" constant="1" id="L3U-f5-WCL"/>
                                                     </constraints>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WC-7S-8kk">
+                                                    <rect key="frame" x="209" y="11" width="22" height="22"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1WC-7S-8kk" secondAttribute="height" multiplier="1:1" id="L3P-BM-91p"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="zKD-BO-v91" firstAttribute="centerY" secondItem="JeI-dF-hUQ" secondAttribute="centerY" id="64z-0f-a1j"/>
+                                                <constraint firstItem="1WC-7S-8kk" firstAttribute="leading" secondItem="wGf-jB-073" secondAttribute="trailing" constant="18" id="9UZ-DG-nyW"/>
                                                 <constraint firstAttribute="bottom" secondItem="Saw-k5-PDN" secondAttribute="bottom" id="A3c-Am-Vk5"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zKD-BO-v91" secondAttribute="trailingMargin" id="NkC-L9-a2z"/>
                                                 <constraint firstItem="wGf-jB-073" firstAttribute="centerY" secondItem="JeI-dF-hUQ" secondAttribute="centerY" id="P64-XG-TPU"/>
                                                 <constraint firstItem="Saw-k5-PDN" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" id="PDy-g4-YBh"/>
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="width" secondItem="Saw-k5-PDN" secondAttribute="width" id="Taz-5b-9Zj"/>
                                                 <constraint firstItem="wGf-jB-073" firstAttribute="leading" secondItem="0Xw-sB-lMq" secondAttribute="trailing" constant="16" id="b8e-8M-RGe"/>
+                                                <constraint firstItem="1WC-7S-8kk" firstAttribute="centerY" secondItem="JeI-dF-hUQ" secondAttribute="centerY" id="dwG-v5-frJ"/>
                                                 <constraint firstItem="wGf-jB-073" firstAttribute="height" secondItem="JeI-dF-hUQ" secondAttribute="height" multiplier="0.6" id="gx3-y6-C2R"/>
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" id="hQk-hP-0PL"/>
                                                 <constraint firstItem="zKD-BO-v91" firstAttribute="leading" secondItem="JeI-dF-hUQ" secondAttribute="leadingMargin" constant="16" id="i4O-Bi-82W"/>
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="top" secondItem="JeI-dF-hUQ" secondAttribute="top" id="jxj-l4-AxC"/>
                                                 <constraint firstItem="wGf-jB-073" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" id="kWc-nu-aUG"/>
                                                 <constraint firstItem="0Xw-sB-lMq" firstAttribute="centerY" secondItem="JeI-dF-hUQ" secondAttribute="centerY" id="oeE-fR-k2Y"/>
+                                                <constraint firstItem="1WC-7S-8kk" firstAttribute="height" secondItem="JeI-dF-hUQ" secondAttribute="height" multiplier="0.5" id="pQi-IO-K4m"/>
                                                 <constraint firstItem="Saw-k5-PDN" firstAttribute="width" secondItem="JeI-dF-hUQ" secondAttribute="width" multiplier="0.4" id="uZY-gZ-sG7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -129,6 +139,7 @@
                                             <outlet property="bottomLineView" destination="Saw-k5-PDN" id="D4V-LB-2ED"/>
                                             <outlet property="dayLabel" destination="zKD-BO-v91" id="7eb-IZ-Igz"/>
                                             <outlet property="topLineView" destination="1k9-VK-DVc" id="OJn-wv-loo"/>
+                                            <outlet property="uvIndexView" destination="1WC-7S-8kk" id="aQP-7Y-til"/>
                                             <outlet property="weatherIcon" destination="wGf-jB-073" id="JTV-40-2rk"/>
                                             <outlet property="weatherLabel" destination="0Xw-sB-lMq" id="vBj-2j-XRA"/>
                                         </connections>
@@ -177,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="-71"/>
+            <point key="canvasLocation" x="357.60000000000002" y="-71.514242878560722"/>
         </scene>
         <!--City Selection View Controller-->
         <scene sceneID="cXK-WR-hLO">

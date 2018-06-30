@@ -22,6 +22,19 @@ class BusinessManager {
         }
     }
     
+    
+    static func getUvi(coord: Coord, completed: @escaping ((_ response:Uvi?, _ error:Error?) -> Void)) {
+        DataAccess.getUvi(coord: coord) { (res, error) in
+            completed(res, error)
+        }
+    }
+    
+    static func getUviDaily(coord: Coord, completed: @escaping ((_ response:[Uvi]?, _ error:Error?) -> Void)) {
+        DataAccess.getUviDaily(coord: coord) { (res, error) in
+            completed(res, error)
+        }
+    }
+    
     static func getCitiesAsync(completed: @escaping (_ cities: [City]?) -> Void) {
         CityDataAccess.loadDataAsync() {
             (cities) in

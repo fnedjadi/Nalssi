@@ -17,6 +17,7 @@
 		3153FB8D20E52C920084538A /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153FB8C20E52C920084538A /* Daily.swift */; };
 		3153FB8F20E52D5F0084538A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153FB8E20E52D5F0084538A /* List.swift */; };
 		316BC79B20E53D4B00810D71 /* CityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316BC79A20E53D4B00810D71 /* CityWeather.swift */; };
+		31D0628520E7C48100623492 /* Uvi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D0628420E7C48100623492 /* Uvi.swift */; };
 		31F0737920E3E4B6000EEE2E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737820E3E4B6000EEE2E /* Constants.swift */; };
 		31F0737B20E3EA86000EEE2E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737A20E3EA86000EEE2E /* Router.swift */; };
 		31F0737D20E3EC4D000EEE2E /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0737C20E3EC4D000EEE2E /* DataAccess.swift */; };
@@ -48,6 +49,7 @@
 		3153FB8C20E52C920084538A /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
 		3153FB8E20E52D5F0084538A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		316BC79A20E53D4B00810D71 /* CityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeather.swift; sourceTree = "<group>"; };
+		31D0628420E7C48100623492 /* Uvi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uvi.swift; sourceTree = "<group>"; };
 		31F0737820E3E4B6000EEE2E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		31F0737A20E3EA86000EEE2E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		31F0737C20E3EC4D000EEE2E /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				3153FB8E20E52D5F0084538A /* List.swift */,
 				55F17C3D20E4D5EB00F42C49 /* Coord.swift */,
 				316BC79A20E53D4B00810D71 /* CityWeather.swift */,
+				31D0628420E7C48100623492 /* Uvi.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				31F0738220E3EE68000EEE2E /* Weather.swift in Sources */,
 				55F17C4020E4D67000F42C49 /* CityDataAccess.swift in Sources */,
 				55F17C4920E62DE900F42C49 /* CharacterExtension.swift in Sources */,
+				31D0628520E7C48100623492 /* Uvi.swift in Sources */,
 				3104464220D69996008FB490 /* HomeTableViewCell.swift in Sources */,
 				31F0738420E3EF0C000EEE2E /* Main.swift in Sources */,
 				31F0738620E3EFAA000EEE2E /* WeatherDetails.swift in Sources */,

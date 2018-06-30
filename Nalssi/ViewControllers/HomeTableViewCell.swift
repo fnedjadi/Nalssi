@@ -14,6 +14,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var uvIndexView: UIView!
     
     @IBOutlet weak var topLineView: UIView!
     @IBOutlet weak var bottomLineView: UIView!

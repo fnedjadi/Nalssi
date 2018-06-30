@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var dailyWeather : [List] = []
+    var dailyUvi : [Uvi] = []
     var cities: [City]?
     var favCities: [City]?
     
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        setCityDisplayed(City(id: 6455259, name: "Paris", country: "FR", coord: Coord(lon: 0, lat: 0)))
+        setCityDisplayed(City(id: 6455259, name: "Paris", country: "FR", coord: Coord(lon: 2.35, lat: 48.86)))
         loadCities()
     }
 
@@ -84,6 +85,19 @@ class ViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        BusinessManager.getUviDaily(coord: city.coord) { (res, err) in
+            if let error = err {
+                let alert = UIAlertController(title: "Error for daily uvi", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            if let uvis = res {
+                self.dailyUvi = uvis
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func addFavorite(_ city: City) {
@@ -135,14 +149,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if !self.dailyWeather.isEmpty {
             var weather = self.dailyWeather[indexPath.row]
             let dateFormatter = DateFormatter()
+            let dateFormatter2 = DateFormatter()
+            let calendar = Calendar.current
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter2.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" //2018-07-01T12:00:00Z
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            dateFormatter2.locale = Locale(identifier: "en_US_POSIX")
             
             for tmp in self.dailyWeather {
                 let date = dateFormatter.date(from: tmp.date!) ?? Date()
-                let calendar = Calendar.current
                 let day = calendar.component(.day, from: date)
-                let day2 = calendar.component(.day, from: self.generateDates(date: Date(), added: indexPath.row))
+                let day2 = calendar.component(.day, from: self.generateDates(date: Date(), added: indexPath.row + 1))
                 if (day == day2) {
                     weather = tmp
                     break
@@ -156,6 +173,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.weatherLabel.text = "\(weather.main?.temp ?? 0)°"
             cell.weatherIcon.image = ConstantDatas.weatherIcon(main: weather.weather?.first?.main ?? "", description: weather.weather?.first?.description ?? "")
+            
+            if !self.dailyUvi.isEmpty {
+                for uvi in dailyUvi {
+                    let day = calendar.component(.day, from: dateFormatter.date(from: weather.date!)!)
+                    let dayUvi = calendar.component(.day, from: dateFormatter2.date(from: uvi.date_iso!)!)
+                    if day == dayUvi {
+                        cell.uvIndexView.backgroundColor = ConstantDatas.uvIndexColor(day: uvi.value ?? -1)
+                        cell.uvIndexView.layer.cornerRadius = cell.uvIndexView.frame.width / 2
+                        break
+                    }
+                }
+            }
         }
         
         return cell

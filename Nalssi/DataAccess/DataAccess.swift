@@ -35,4 +35,28 @@ class DataAccess {
                 completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
+    
+    static func getUvi(coord: Coord, completed: @escaping ((_ response:Uvi?, _ error:Error?) -> Void)) {
+        let params = ["lat": "\(coord.lat)",
+            "lon": "\(coord.lon)",
+            "appid": Constants.Headers.Api_Key]
+        
+        Alamofire.request(Router.getUvi().path, method: Router.getUvi().method, parameters: params, encoding: URLEncoding.queryString, headers: [:])
+            .validate()
+            .responseObject { (alamoResponse: DataResponse<Uvi>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
+    
+    static func getUviDaily(coord: Coord, completed: @escaping ((_ response:[Uvi]?, _ error:Error?) -> Void)) {
+        let params = ["lat": "\(coord.lat)",
+            "lon": "\(coord.lon)",
+            "appid": Constants.Headers.Api_Key]
+        
+        Alamofire.request(Router.getUviDaily().path, method: Router.getUviDaily().method, parameters: params, encoding: URLEncoding.queryString, headers: [:])
+            .validate()
+            .responseArray(completionHandler: { (alamoResponse: DataResponse<[Uvi]>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+            })
+    }
 }
