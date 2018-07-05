@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -21,13 +22,26 @@ class ViewController: UIViewController {
     var dailyUvi : [Uvi] = []
     var cities: [City]?
     var favCities: [City]?
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            self.locationManager.startUpdatingLocation()
+        }
         setupUI()
-        setCityDisplayed(City(id: 6455259, name: "Paris", country: "FR", coord: Coord(lon: 2.35, lat: 48.86)))
         loadCities()
+        setCityDisplayed(City(id: 6455259, name: "Paris", country: "FR", coord: Coord(lon: 2.35, lat: 48.86)))
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let value = manager.location?.coordinate else { return }
+        print("long: \(value.longitude.binade), lat: \(value.latitude.binade)")
+//        setupUI()
     }
 
     override func didReceiveMemoryWarning() {

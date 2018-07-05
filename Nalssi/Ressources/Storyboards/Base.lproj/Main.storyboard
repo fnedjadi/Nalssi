@@ -80,33 +80,33 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="wGf-jB-073">
-                                                    <rect key="frame" x="165" y="9" width="26" height="26"/>
+                                                    <rect key="frame" x="174.5" y="9" width="26" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="wGf-jB-073" secondAttribute="height" multiplier="1:1" id="Iak-BP-KFU"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-sB-lMq">
-                                                    <rect key="frame" x="124.5" y="11" width="24.5" height="21"/>
+                                                    <rect key="frame" x="134" y="11" width="24.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Saw-k5-PDN">
-                                                    <rect key="frame" x="106.5" y="43" width="142" height="1"/>
+                                                    <rect key="frame" x="89" y="43" width="177.5" height="1"/>
                                                     <color key="backgroundColor" white="0.33000000000000002" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="qCC-z3-whb"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1k9-VK-DVc">
-                                                    <rect key="frame" x="106" y="0.0" width="142" height="1"/>
+                                                    <rect key="frame" x="88.5" y="0.0" width="177.5" height="1"/>
                                                     <color key="backgroundColor" white="0.33333333329999998" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="L3U-f5-WCL"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WC-7S-8kk">
-                                                    <rect key="frame" x="209" y="11" width="22" height="22"/>
+                                                    <rect key="frame" x="218.5" y="13" width="17.5" height="18"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1WC-7S-8kk" secondAttribute="height" multiplier="1:1" id="L3P-BM-91p"/>
@@ -128,10 +128,10 @@
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" id="hQk-hP-0PL"/>
                                                 <constraint firstItem="zKD-BO-v91" firstAttribute="leading" secondItem="JeI-dF-hUQ" secondAttribute="leadingMargin" constant="16" id="i4O-Bi-82W"/>
                                                 <constraint firstItem="1k9-VK-DVc" firstAttribute="top" secondItem="JeI-dF-hUQ" secondAttribute="top" id="jxj-l4-AxC"/>
-                                                <constraint firstItem="wGf-jB-073" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" id="kWc-nu-aUG"/>
+                                                <constraint firstItem="wGf-jB-073" firstAttribute="centerX" secondItem="JeI-dF-hUQ" secondAttribute="centerX" constant="10" id="kWc-nu-aUG"/>
                                                 <constraint firstItem="0Xw-sB-lMq" firstAttribute="centerY" secondItem="JeI-dF-hUQ" secondAttribute="centerY" id="oeE-fR-k2Y"/>
-                                                <constraint firstItem="1WC-7S-8kk" firstAttribute="height" secondItem="JeI-dF-hUQ" secondAttribute="height" multiplier="0.5" id="pQi-IO-K4m"/>
-                                                <constraint firstItem="Saw-k5-PDN" firstAttribute="width" secondItem="JeI-dF-hUQ" secondAttribute="width" multiplier="0.4" id="uZY-gZ-sG7"/>
+                                                <constraint firstItem="1WC-7S-8kk" firstAttribute="height" secondItem="JeI-dF-hUQ" secondAttribute="height" multiplier="0.4" id="pQi-IO-K4m"/>
+                                                <constraint firstItem="Saw-k5-PDN" firstAttribute="width" secondItem="JeI-dF-hUQ" secondAttribute="width" multiplier="0.5" id="uZY-gZ-sG7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,11 +201,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HJy-po-ziF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search for a city" id="HrM-kq-WlF">
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="search for a city" id="HrM-kq-WlF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search"/>
+                                    <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search" textContentType="address-level2"/>
                                     <connections>
                                         <outlet property="delegate" destination="rKk-0f-1Ug" id="Jb0-IR-SyL"/>
                                     </connections>
@@ -221,16 +221,18 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris, FR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51g-74-wvh">
                                                     <rect key="frame" x="30" y="11" width="315" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="51g-74-wvh" secondAttribute="trailing" constant="15" id="Ghl-FY-RxK"/>
                                                 <constraint firstItem="51g-74-wvh" firstAttribute="centerY" secondItem="nxO-dL-k3D" secondAttribute="centerY" id="OpU-CW-3rJ"/>
                                                 <constraint firstItem="51g-74-wvh" firstAttribute="leading" secondItem="nxO-dL-k3D" secondAttribute="leadingMargin" constant="15" id="adT-we-Ay4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cityName" destination="51g-74-wvh" id="ppU-Ef-CsY"/>
                                         </connections>
@@ -249,12 +251,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2Ow-ln-23b" secondAttribute="trailing" constant="15" id="fqY-Au-s17"/>
                                                 <constraint firstItem="2Ow-ln-23b" firstAttribute="centerY" secondItem="VIA-2v-Gsa" secondAttribute="centerY" id="mS9-yN-4OC"/>
                                                 <constraint firstItem="2Ow-ln-23b" firstAttribute="leading" secondItem="VIA-2v-Gsa" secondAttribute="leadingMargin" constant="15" id="qdZ-JT-JFs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cityName" destination="2Ow-ln-23b" id="c2Q-y9-M1S"/>
                                         </connections>
